@@ -1,0 +1,112 @@
+Testimonials css
+CSS HERE:
+/* Testimonials Section CSS */
+.testimonials-section {
+  position: relative;
+  background-color: #171717;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+/* Create the shadow blur effect on the left and right */
+.testimonials-section::before,
+.testimonials-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonials-section::before {
+  left: 0;
+  background: linear-gradient(to right, #202020, rgba(252, 252, 252, 0) 99%);
+}
+
+.testimonials-section::after {
+  right: 0;
+  background: linear-gradient(to left, #202020, rgba(252, 252, 252, 0) 100%);
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: marquee 13s linear infinite;
+}
+
+.testimonial-item {
+  flex: 0 0 auto;
+  width: calc(100% / 4);
+  margin: 10px;
+  padding: 20px;
+  background-color: #202020;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+ transition: border-color 0.3s ease; /* Smooth transition for the border */
+  border: 2px solid transparent; /* Initial border */
+  z-index: 1;
+}
+.testimonial-item:hover {
+  border-color: #75ba09; /* Change border color on hover */
+}
+
+/* Layout for author details */
+.author-details {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: bold;
+  margin: 0;
+  color: #75ba09;
+}
+
+.author-title {
+  margin-top: -2px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .testimonial-item {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-item {
+    width: calc(100% / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-item {
+    width: 100%;
+  }
+}
