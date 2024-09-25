@@ -1,0 +1,13 @@
+uss this css for mobile devices
+@media (max-width: 576px) and (max-width: 768px) {
+  .testimonial-item {
+  /* Other existing styles */
+  flex: 0 0 60%;
+  width: calc(100% / 7);
+    
+  }
+.testimonials-container {
+  animation: marquee 6s linear infinite; /* Adjust speed for mobile */
+    width: calc(60% * {{ section.blocks.size }}); /* Width based on total items */
+  }
+}
